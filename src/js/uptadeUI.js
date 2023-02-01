@@ -1,4 +1,6 @@
 import movies from './movies'
+import bookmark from './bookmark'
+import modalfunc from './modal'
 const cards = document.querySelector('.cards')
 const movie = movies.slice(0, 30)
 let categories = new Set()
@@ -64,8 +66,8 @@ function uptadeUI(val = 1) {
     });
     array.forEach((b) => {
         genre.innerHTML += `
-    <option value="${b}">${b}</option>
-    `
+        <option value="${b}">${b}</option>
+        `
     });
     let select = document.querySelector('.genre')
     let j = document.querySelectorAll('.card .genre')
@@ -80,6 +82,8 @@ function uptadeUI(val = 1) {
             }
         });
     })
+    bookmark()
+    modalfunc()
 }
 uptadeUI(1)
 export default uptadeUI
